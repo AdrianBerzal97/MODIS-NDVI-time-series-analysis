@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Research data and generated outputs
+*.tif
+*.tiff
+*.hdf
+*.h5
+*.nc
+*.csv
+*.xlsx
+*.xls
+*.rds
+*.RData
+
+# Temporary files
+*.tmp
+*.log
