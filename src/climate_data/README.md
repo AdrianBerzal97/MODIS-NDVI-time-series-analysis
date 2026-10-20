@@ -19,7 +19,7 @@ This directory documents the climate-data component of the wider research workfl
 
 ## Research-script provenance and limitations
 
-The supplied `tasmax` research scripts include a multi-model extraction workflow, NetCDF integrity checks, spreadsheet exports and date-coverage checks. They were written for **Cipérez, Urraca-Miguel and Jarilla**. The public NDVI figures currently describe **Piñuecar, Colmenar Viejo and Tielmes**. These are **different sets of locations**; they must not be described as a matched NDVI–climate comparison without further clarification.
+The supplied `tasmax` research scripts include a multi-model extraction workflow, NetCDF integrity checks, spreadsheet exports and date-coverage checks. They were written for **Cipérez, Urraca-Miguel and Jarilla**. The public NDVI figures currently describe **Piñuecar, Colmenar Viejo and Tielmes**. The author confirms that both workflows belong to **the same MODIS article**. However, the supplied files do not explain how these two sets of locations correspond; do not assume a direct site-level match.
 
 The same general inspection/extraction approach was reportedly used for `tasmin`, mean temperature and precipitation, but the supplied examples are for `tasmax`. No complete or validated four-variable pipeline is claimed here. The AEMET download scripts and original NetCDF files are not yet included in this directory.
 
