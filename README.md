@@ -65,14 +65,20 @@ Both accumulation approaches are reset at the beginning of each hydrological yea
 
 The scientific comparison is between **MODIS NDVI and SIMPAST-simulated biomass**, not a direct NDVI–climate-variable correlation. SIMPAST is driven separately by two climate-data sources:
 
-1. **AdapteCCa** climate-model NetCDF inputs (downloaded **manually** from the platform because automated downloads were unreliable).
-2. **AEMET** daily observations from weather stations, downloaded using R scripts and the AEMET API.
+1. **AdapteCCa** climate-model NetCDF inputs (downloaded **manually via the AdapteCCa THREDDS server**; the NetCDF scripts process files already downloaded).
+2. **AEMET** daily observations from weather stations, downloaded using R scripts and the AEMET API (Buitrago del Lozoya, Colmenar Viejo and Aranjuez). These station locations differ from the MODIS site centroids.
 
 The resulting SIMPAST biomass estimates are related to MODIS NDVI and the two climate-input pathways are compared. Climate inputs include maximum, minimum and mean temperature and precipitation, subject to the original model's input specification. **This repository does not yet contain the SIMPAST–NDVI comparison scripts or validated biomass outputs**; the Python NDVI modules currently represent vegetation time-series preparation and visualization only.
 
 **Study-site coordinates (WGS84, latitude, longitude):** Piñuecar (41.037396, -3.605052), Colmenar Viejo (40.614862, -3.772985), and Tielmes (40.221771, -3.295980). The public AdapteCCa extraction script uses these sites.
 
 The supplied diagnostic and date-control workbooks for `tasmax` were generated using a separate three-municipality workflow; their outputs should **not** be interpreted as validation of extraction at the MODIS sites. See [climate-data workflow notes](src/climate_data/README.md). No original AEMET observations, NetCDF datasets, or biomass research data are published.
+
+## Climate-data acquisition and processing
+
+AdapteCCa NetCDF files were downloaded manually from its THREDDS server. The repository contains R functions for local NetCDF extraction and metadata diagnosis, **not** a THREDDS download script. The AEMET API scripts cover 2000–2020 and 2021–2025, use an environment variable named `AEMET_API_KEY` and write local outputs to `outputs/aemet/`. Never commit the key or downloaded datasets. These scripts are portfolio adaptations and have not been validated end-to-end.
+
+See [climate-data documentation](src/climate_data/README.md) for station identifiers, usage and limitations. The scripts comparing SIMPAST biomass with NDVI and validated biomass outputs are not yet included.
 
 ## Code organisation
 
@@ -113,7 +119,9 @@ MODIS-NDVI-time-series-analysis/
     ├── climate_data/
     │   ├── README.md
     │   ├── 01_extract_adaptecca_netcdf.R
-    │   └── 02_diagnose_netcdf.R
+    │   ├── 02_diagnose_netcdf.R
+    │   ├── 03_download_aemet_2000_2020.R
+    │   └── 04_download_aemet_2021_2025.R
     ├── README.md
     ├── 01_ndvi_time_series_processing.py
     ├── 02_ndvi_accumulation.py
