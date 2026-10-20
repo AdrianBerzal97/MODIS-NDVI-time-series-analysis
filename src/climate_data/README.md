@@ -23,7 +23,7 @@ This directory documents climate inputs for the MODIS–SIMPAST biomass comparis
 4. Extract grid-cell values for research locations only after checking coordinate alignment and spatial reference.
 5. Convert units using NetCDF metadata (e.g. Kelvin to Celsius where applicable), not value thresholds.
 6. Check date coverage and missing records by model, scenario, variable and location.
-7. Compare climate variables with NDVI only after aligning study locations, time periods and temporal aggregation.
+7. Feed the checked climate series into SIMPAST, then compare the resulting simulated biomass with MODIS NDVI using aligned sites, dates and temporal aggregation. The climate variables themselves are not the primary NDVI comparison.
 
 ## Research-script provenance and limitations
 
