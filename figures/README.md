@@ -8,9 +8,7 @@ The portfolio deliberately uses a concise selection of author-provided figures f
 | [Figure 2](Figure_2.png) | Seasonal mean NDVI across the three sites | In repository |
 | [Combined NDVI time series](Time_Series_3_Locations_Mean_NDVI.png) | Long-term comparison of NDVI at the three sites | In repository |
 | [Figure S1](Figure_S1.png) | Original NDVI, simple cumulative NDVI and conditional cumulative NDVI | In repository |
-| Figure S2 | Original NDVI, simple cumulative NDVI and conditional cumulative NDVI at Tielmes | Provided by the author; binary upload pending |
-
-Figure S2 is supplied as `Figure_S2(2).png` in the conversation and should be committed as `figures/Figure_S2.png` once the binary is available to the GitHub upload workflow. Do not replace it with a synthetic redraw.
+| [Figure S2](Figure_S2.png) | Original NDVI, simple cumulative NDVI and conditional cumulative NDVI at Tielmes | In repository |
 
 Individual per-site NDVI time series were also supplied, but the combined plot already communicates their principal portfolio purpose. They are omitted to reduce redundancy.
 
