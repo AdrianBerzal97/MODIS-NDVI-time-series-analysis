@@ -25,3 +25,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+
+# Local credentials and generated climate downloads
+.Renviron
+.env
+.env.*
+!.env.example
+outputs/
+netcdf/
