@@ -4,7 +4,7 @@
 
 This repository presents a portfolio-oriented workflow for analysing long-term vegetation dynamics in Mediterranean grasslands using MODIS NDVI time series.
 
-The project focuses on three grassland sites located along a climatic gradient in the Community of Madrid, Spain: **Piñuecar (Mountain)**, **Colmenar Viejo (Foothill)**, and **Tielmes (Flatland)**. The analysis explores long-term and seasonal vegetation dynamics and NDVI accumulation within hydrological years.
+The project focuses on three grassland sites located along a climatic gradient in the Community of Madrid, Spain: **Piñuecar (Mountain)**, **Colmenar Viejo (Foothill)**, and **Tielmes (Flatland)**. The analysis explores long-term and seasonal vegetation dynamics and NDVI accumulation within hydrological years. The broader research also compares NDVI–climate relationships using AdapteCCa gridded climate data and observations from AEMET meteorological stations.
 
 This public repository demonstrates the remote-sensing and environmental time-series methodology used in the research workflow. It is not a complete reproduction package and does not include the original research datasets.
 
@@ -61,6 +61,14 @@ Both accumulation approaches are reset at the beginning of each hydrological yea
 
 ![NDVI simple and conditional cumulative indicators](figures/Figure_S1.png)
 
+## Climate-data comparison: AdapteCCa and AEMET
+
+The same research article also investigates relationships between NDVI and climate variables from two complementary sources: **AdapteCCa climate-model datasets** and **observations from AEMET weather stations**. The research workflows cover maximum temperature (`tasmax`), minimum temperature (`tasmin`), mean temperature (`tas`) and precipitation (`pr`). The uploaded R examples demonstrate NetCDF diagnostics, gridded climate extraction, file checks and temporal-coverage checks for `tasmax`; analogous processing of other variables is not yet represented by published scripts.
+
+**Site clarification:** the supplied AdapteCCa R scripts name Cipérez, Urraca-Miguel and Jarilla, whereas the NDVI figures shown here name Piñuecar, Colmenar Viejo and Tielmes. The author confirms these workflows belong to the same article, but the precise relationship between these location sets is not documented in the public materials. The repository does not assume they are interchangeable or imply a direct site-level match.
+
+See [`src/climate_data/README.md`](src/climate_data/README.md) for the climate-data workflow and its validation limitations. Original AEMET observations and climate NetCDF datasets are not distributed.
+
 ## Code organisation
 
 The public workflow is divided into three small, reusable modules:
@@ -97,6 +105,8 @@ MODIS-NDVI-time-series-analysis/
 │   ├── Figure_S1.png
 │   └── Time_Series_3_Locations_Mean_NDVI.png
 └── src/
+    ├── climate_data/
+    │   └── README.md
     ├── README.md
     ├── 01_ndvi_time_series_processing.py
     ├── 02_ndvi_accumulation.py
@@ -112,6 +122,8 @@ MODIS-NDVI-time-series-analysis/
 - Python data analysis with pandas and NumPy
 - Scientific visualisation with Matplotlib
 - Geospatial interpretation across an environmental gradient
+- Climate-data comparison using gridded model output and station observations
+- NetCDF diagnostics and climate-data quality-control concepts
 - Reproducible organisation of research workflows
 
 ## Data availability
