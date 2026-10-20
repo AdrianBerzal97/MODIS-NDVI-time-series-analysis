@@ -61,6 +61,12 @@ Both accumulation approaches are reset at the beginning of each hydrological yea
 
 ![NDVI simple and conditional cumulative indicators](figures/Figure_S1.png)
 
+### Supplementary example: Tielmes
+
+The supplementary figure below shows the original NDVI series and both within-year accumulation approaches at Tielmes. It complements the [first-difference sensitivity results](results/supplementary_table_S1_first_differences.csv).
+
+![Tielmes NDVI time series, simple cumulative NDVI and conditional cumulative NDVI (Figure S2)](figures/Figure_S2.png)
+
 ## SIMPAST biomass–NDVI comparison: AdapteCCa vs AEMET
 
 The scientific comparison is between **MODIS NDVI and SIMPAST-simulated biomass**, not a direct NDVI–climate-variable correlation. SIMPAST is driven separately by two climate-data sources:
