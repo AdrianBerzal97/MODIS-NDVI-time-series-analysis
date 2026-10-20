@@ -1,0 +1,22 @@
+site,climate_model,simple_delta_ndvi_r2,simple_p_value,conditional_delta_ndvi_r2,conditional_p_value
+Piñuecar,ACCESS-CM2,0.191,<0.001,0.043,<0.001
+Piñuecar,CNRM-ESM2,0.172,<0.001,0.051,<0.001
+Piñuecar,EC-Earth3-Veg,0.196,<0.001,0.051,<0.001
+Piñuecar,MIROC6,0.193,<0.001,0.051,<0.001
+Piñuecar,MPI-ESM1,0.164,<0.001,0.052,<0.001
+Piñuecar,MRI-ESM2,0.167,<0.001,0.052,<0.001
+Piñuecar,Mean R2,0.180,,0.050,
+Colmenar Viejo,ACCESS-CM2,0.004,0.297,<0.001,0.413
+Colmenar Viejo,CNRM-ESM2,0.005,0.257,0.001,0.148
+Colmenar Viejo,EC-Earth3,0.005,0.293,0.001,0.230
+Colmenar Viejo,MIROC6,0.005,0.273,0.001,0.244
+Colmenar Viejo,MPI-ESM1,0.004,0.288,0.001,0.153
+Colmenar Viejo,MRI-ESM2,0.003,0.441,0.001,0.325
+Colmenar Viejo,Mean R2,0.004,,0.001,
+Tielmes,ACCESS-CM2,0.097,<0.001,0.008,0.016
+Tielmes,CNRM-ESM2,0.088,<0.001,0.018,<0.001
+Tielmes,EC-Earth3,0.109,<0.001,0.008,0.003
+Tielmes,MIROC6,0.118,<0.001,0.013,<0.001
+Tielmes,MPI-ESM1,0.093,<0.001,0.014,<0.001
+Tielmes,MRI-ESM2,0.078,<0.001,0.016,<0.001
+Tielmes,Mean R2,0.097,,0.013,
