@@ -63,9 +63,9 @@ Both accumulation approaches are reset at the beginning of each hydrological yea
 
 ## Climate-data comparison: AdapteCCa and AEMET
 
-The same research article also investigates relationships between NDVI and climate variables from two complementary sources: **AdapteCCa climate-model datasets** and **observations from AEMET weather stations**. The research workflows cover maximum temperature (`tasmax`), minimum temperature (`tasmin`), mean temperature (`tas`) and precipitation (`pr`). The uploaded R examples demonstrate NetCDF diagnostics, gridded climate extraction, file checks and temporal-coverage checks for `tasmax`; analogous processing of other variables is not yet represented by published scripts.
+The same research article also investigates relationships between NDVI and climate variables from two complementary sources: **AdapteCCa climate-model datasets** and **observations from AEMET weather stations**. The research workflows cover maximum temperature (`tasmax`), minimum temperature (`tasmin`), mean temperature (`tas`) and precipitation (`pr`). The uploaded R examples demonstrate NetCDF diagnostics, gridded climate extraction, file checks and temporal-coverage checks for `tasmax`; the published extraction function accepts the variable name for other climate variables, but these cases remain unvalidated with original data.
 
-**Site clarification:** the supplied AdapteCCa R scripts name Cipérez, Urraca-Miguel and Jarilla, whereas the NDVI figures shown here name Piñuecar, Colmenar Viejo and Tielmes. The author confirms these workflows belong to the same article, but the precise relationship between these location sets is not documented in the public materials. The repository does not assume they are interchangeable or imply a direct site-level match.
+**Study-site coordinates (WGS84, latitude, longitude):** Piñuecar (41.037396, -3.605052), Colmenar Viejo (40.614862, -3.772985), and Tielmes (40.221771, -3.295980). The public AdapteCCa extraction script has been adapted to these three MODIS sites; the original research script used locations from another study.
 
 See [`src/climate_data/README.md`](src/climate_data/README.md) for the climate-data workflow and its validation limitations. Original AEMET observations and climate NetCDF datasets are not distributed.
 
@@ -106,7 +106,9 @@ MODIS-NDVI-time-series-analysis/
 │   └── Time_Series_3_Locations_Mean_NDVI.png
 └── src/
     ├── climate_data/
-    │   └── README.md
+    │   ├── README.md
+    │   ├── 01_extract_adaptecca_netcdf.R
+    │   └── 02_diagnose_netcdf.R
     ├── README.md
     ├── 01_ndvi_time_series_processing.py
     ├── 02_ndvi_accumulation.py
