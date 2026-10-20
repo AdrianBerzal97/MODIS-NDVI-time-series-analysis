@@ -4,7 +4,7 @@
 
 This repository presents a portfolio-oriented workflow for analysing long-term vegetation dynamics in Mediterranean grasslands using MODIS NDVI time series.
 
-The project focuses on three grassland sites located along a climatic gradient in the Community of Madrid, Spain: **Piñuecar (Mountain)**, **Colmenar Viejo (Foothill)**, and **Tielmes (Flatland)**. The analysis explores long-term and seasonal vegetation dynamics and NDVI accumulation within hydrological years. The broader research also compares NDVI–climate relationships using AdapteCCa gridded climate data and observations from AEMET meteorological stations.
+The project focuses on three grassland sites located along a climatic gradient in the Community of Madrid, Spain: **Piñuecar (Mountain)**, **Colmenar Viejo (Foothill)**, and **Tielmes (Flatland)**. The analysis explores long-term and seasonal vegetation dynamics and NDVI accumulation within hydrological years. The broader research compares the relationship between MODIS NDVI and biomass simulated with SIMPAST under two climate-data inputs: AdapteCCa climate-model data and observed AEMET station data.
 
 This public repository demonstrates the remote-sensing and environmental time-series methodology used in the research workflow. It is not a complete reproduction package and does not include the original research datasets.
 
@@ -61,13 +61,18 @@ Both accumulation approaches are reset at the beginning of each hydrological yea
 
 ![NDVI simple and conditional cumulative indicators](figures/Figure_S1.png)
 
-## Climate-data comparison: AdapteCCa and AEMET
+## SIMPAST biomass–NDVI comparison: AdapteCCa vs AEMET
 
-The same research article also investigates relationships between NDVI and climate variables from two complementary sources: **AdapteCCa climate-model datasets** and **observations from AEMET weather stations**. The research workflows cover maximum temperature (`tasmax`), minimum temperature (`tasmin`), mean temperature (`tas`) and precipitation (`pr`). The uploaded R examples demonstrate NetCDF diagnostics, gridded climate extraction, file checks and temporal-coverage checks for `tasmax`; the published extraction function accepts the variable name for other climate variables, but these cases remain unvalidated with original data.
+The scientific comparison is between **MODIS NDVI and SIMPAST-simulated biomass**, not a direct NDVI–climate-variable correlation. SIMPAST is driven separately by two climate-data sources:
 
-**Study-site coordinates (WGS84, latitude, longitude):** Piñuecar (41.037396, -3.605052), Colmenar Viejo (40.614862, -3.772985), and Tielmes (40.221771, -3.295980). The public AdapteCCa extraction script has been adapted to these three MODIS sites; the original research script used locations from another study.
+1. **AdapteCCa** climate-model NetCDF inputs (downloaded **manually** from the platform because automated downloads were unreliable).
+2. **AEMET** daily observations from weather stations, downloaded using R scripts and the AEMET API.
 
-See [`src/climate_data/README.md`](src/climate_data/README.md) for the climate-data workflow and its validation limitations. Original AEMET observations and climate NetCDF datasets are not distributed.
+The resulting SIMPAST biomass estimates are related to MODIS NDVI and the two climate-input pathways are compared. Climate inputs include maximum, minimum and mean temperature and precipitation, subject to the original model's input specification. **This repository does not yet contain the SIMPAST–NDVI comparison scripts or validated biomass outputs**; the Python NDVI modules currently represent vegetation time-series preparation and visualization only.
+
+**Study-site coordinates (WGS84, latitude, longitude):** Piñuecar (41.037396, -3.605052), Colmenar Viejo (40.614862, -3.772985), and Tielmes (40.221771, -3.295980). The public AdapteCCa extraction script uses these sites.
+
+The supplied diagnostic and date-control workbooks for `tasmax` were generated using a separate three-municipality workflow; their outputs should **not** be interpreted as validation of extraction at the MODIS sites. See [climate-data workflow notes](src/climate_data/README.md). No original AEMET observations, NetCDF datasets, or biomass research data are published.
 
 ## Code organisation
 
@@ -124,7 +129,7 @@ MODIS-NDVI-time-series-analysis/
 - Python data analysis with pandas and NumPy
 - Scientific visualisation with Matplotlib
 - Geospatial interpretation across an environmental gradient
-- Climate-data comparison using gridded model output and station observations
+- Research workflow design comparing SIMPAST biomass–NDVI relationships under gridded and observed climate inputs
 - NetCDF diagnostics and climate-data quality-control concepts
 - Reproducible organisation of research workflows
 
